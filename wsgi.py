@@ -6,7 +6,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    producer = KafkaProducer(bootstrap_servers='apache-kafka')
+    producer = KafkaProducer(bootstrap_servers='apache-kafka:9092')
     for i in range(100):
         txt = "Hi " + str(i)
         producer.send('test', bytes(txt.encode('ASCII')))
