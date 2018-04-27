@@ -6,7 +6,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    producer = KafkaProducer(bootstrap_servers='localhost:9092')
+    producer = KafkaProducer(bootstrap_servers='apache-kafka')
     producer.send('test', 'hi!')
     return "OpenShift Hello World!"
 
