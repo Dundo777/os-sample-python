@@ -8,7 +8,8 @@ application = Flask(__name__)
 def hello():
     producer = KafkaProducer(bootstrap_servers='apache-kafka')
     for i in range(100):
-        producer.send('test', bytes("hi " + str(i)))
+        txt = "Hi " + str(i)
+        producer.send('test', bytes(txt.encode('ASCII')))
     return "OpenShift Hello World!"
 
 if __name__ == "__main__":
