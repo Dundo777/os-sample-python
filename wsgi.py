@@ -10,6 +10,7 @@ def hello():
     for i in range(100):
         txt = "Hi " + str(i)
         producer.send('test', bytes(txt.encode('ASCII')))
+    producer.flush()
     return "OpenShift Hello World!"
 
 if __name__ == "__main__":
