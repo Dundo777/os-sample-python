@@ -1,7 +1,7 @@
 from flask import Flask
 from kafka import KafkaProducer
->>> 
->>> 
+
+
 application = Flask(__name__)
 
 @application.route("/")
